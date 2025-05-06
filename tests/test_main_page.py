@@ -18,5 +18,4 @@ def test_click_on_certification_banner(driver):
     
     main_page.click_on_certification_banner()
     
-    # Verify that the URL has changed to the certification page
     assert "selenium-training" in driver.current_url, "Certification page not opened."
