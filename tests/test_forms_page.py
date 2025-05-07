@@ -4,13 +4,6 @@ import pytest
 from selenium import webdriver
 from pages.forms_page import FormsPage
 
-@pytest.fixture(scope="session")
-def driver():
-    chromedriver_autoinstaller.install()
-    driver = webdriver.Chrome()
-    yield driver
-    driver.quit()
-
 @pytest.fixture
 def forms_page(driver):
     forms_page = FormsPage(driver)

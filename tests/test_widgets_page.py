@@ -4,13 +4,6 @@ import pytest
 from selenium import webdriver
 from pages.widgets_page import WidgetsPage
 
-@pytest.fixture(scope="session")
-def driver():
-    chromedriver_autoinstaller.install()
-    driver = webdriver.Chrome()
-    yield driver
-    driver.quit()
-
 @pytest.fixture
 def widgets_page(driver):
     widgets_page = WidgetsPage(driver)

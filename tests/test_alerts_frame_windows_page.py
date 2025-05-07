@@ -4,13 +4,6 @@ import pytest
 from selenium import webdriver
 from pages.alerts_frame_windows_page import AlertsFrameWindowsPage
 
-@pytest.fixture(scope="session")
-def driver():
-    chromedriver_autoinstaller.install()
-    driver = webdriver.Chrome()
-    yield driver
-    driver.quit()
-
 @pytest.fixture
 def alerts_frame_windows_page(driver):
     alerts_frame_windows_page = AlertsFrameWindowsPage(driver)
