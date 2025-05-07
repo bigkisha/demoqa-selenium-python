@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self, driver, timeout=10):
@@ -28,6 +29,12 @@ class BasePage:
         current_index = handles.index(current)
         previous_index = (current_index - 1) % len(handles)
         self.driver.switch_to.window(handles[previous_index])
+    
+    def move_to_element(self, element):
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def back(self):
+        self.driver.back()
 
     def open(self, url):
         self.driver.get(url)
