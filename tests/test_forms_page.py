@@ -1,9 +1,8 @@
 import chromedriver_autoinstaller
+import pytest
 
 from selenium import webdriver
 from pages.forms_page import FormsPage
-
-import pytest
 
 @pytest.fixture(scope="session")
 def driver():
