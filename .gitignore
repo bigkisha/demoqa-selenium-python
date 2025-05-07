@@ -4,3 +4,5 @@
 __pycache__/
 
 demoqa_test/
+
+check_pages.py
